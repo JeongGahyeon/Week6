@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.mySlides{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);justify-content: center; align-items: center;cursor: pointer;}
+	</style>
+</head>
+<body>
+	<div style="position: absolute; top: 50%; left: 50%;
+	transform: translate(-50%, -50%);">
+		<img src="main.png">
+	</div>
+
+	<div style="position: absolute; top: 50%; left: 50%;
+	transform: translate(-50%, -50%);">
+	<img src="c_1.png">
+	</div>
+	<!--머리-->
+	<div class="mySlides">
+		<img src="Hf_1.png" onclick="toggleSlideShow()">
+	</div>
+	<div class="mySlides">
+		<img src="Hf_2.png" onclick="toggleSlideShow()">
+	</div>
+	<div class="mySlides">
+		<img src="Hf_3.png" onclick="toggleSlideShow()">
+	</div>
+
+	
+<script type="text/javascript">
+	var slideIndex = 0;
+  var slides = document.getElementsByClassName("mySlides");
+  var slideInterval;
+
+
+  startSlideShow();
+
+  function startSlideShow() {
+    slideInterval = setInterval(showSlides, 100); 
+  }
+
+  function showSlides() {
+    var i;
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  function toggleSlideShow() {
+    if (slideInterval) {
+      clearInterval(slideInterval); // 슬라이드 쇼 정지
+      slideInterval = null;
+    } else {
+      startSlideShow(); // 슬라이드 쇼 다시 시작
+    }
+  }
+
+
+</script>
+</body>
+</html>
